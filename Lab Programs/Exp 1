@@ -1,0 +1,8 @@
+prices = [100, 50, 30]
+quantities = [2, 3, 1]
+discount, tax = 10, 5
+
+subtotal = sum(p*q for p,q in zip(prices, quantities))
+total = (subtotal * (1 - discount/100)) * (1 + tax/100)
+
+print("Total Cost:", total)
