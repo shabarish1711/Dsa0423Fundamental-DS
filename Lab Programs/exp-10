@@ -1,0 +1,13 @@
+import matplotlib.pyplot as plt
+
+months = ['Jan','Feb','Mar','Apr']
+temp = [22,24,28,30]
+rain = [10,20,5,15]
+
+plt.plot(months,temp)
+plt.title("Temperature")
+plt.show()
+
+plt.scatter(months,rain)
+plt.title("Rainfall")
+plt.show()
