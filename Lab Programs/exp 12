@@ -1,0 +1,20 @@
+# Q13 - Word Frequency Distribution
+
+from collections import Counter
+
+reviews = [
+    "This product is amazing",
+    "Amazing quality and great product",
+    "Great value and amazing performance"
+]
+
+words = []
+
+for review in reviews:
+    words.extend(review.lower().split())
+
+word_freq = Counter(words)
+
+print("Word Frequency Distribution:\n")
+for word, freq in word_freq.items():
+    print(word, ":", freq)
