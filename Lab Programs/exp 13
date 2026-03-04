@@ -1,0 +1,14 @@
+# Q12 - Top 5 Products Sold
+
+import pandas as pd
+
+# Sample sales dataset
+data = pd.DataFrame({
+    'Product': ['A','B','C','D','E','F','G'],
+    'UnitsSold': [120, 300, 150, 400, 250, 100, 350]
+})
+
+top5 = data.sort_values(by='UnitsSold', ascending=False).head(5)
+
+print("Top 5 Most Sold Products:\n")
+print(top5)
