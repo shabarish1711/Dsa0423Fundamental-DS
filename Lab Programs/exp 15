@@ -1,0 +1,25 @@
+# Q15 - Hypothesis Testing
+
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy import stats
+
+# Sample clinical trial data
+control = np.array([5,6,7,5,6,8,7])
+treatment = np.array([8,9,7,10,9,8,9])
+
+# Independent t-test
+t_stat, p_value = stats.ttest_ind(treatment, control)
+
+print("T-Statistic:", t_stat)
+print("P-Value:", p_value)
+
+if p_value < 0.05:
+    print("Statistically Significant Difference")
+else:
+    print("No Significant Difference")
+
+# Visualization
+plt.boxplot([control, treatment], labels=["Control", "Treatment"])
+plt.title("Treatment Effect Comparison")
+plt.show()
