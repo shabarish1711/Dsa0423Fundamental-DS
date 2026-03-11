@@ -1,0 +1,26 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Creating shoe sales data inside the program
+data = {
+    "shoe_size": [6, 7, 8, 9, 10, 7, 8, 9, 8, 7],
+    "quantity":  [10, 15, 20, 18, 12, 5, 10, 7, 8, 6]
+}
+
+# Convert dictionary to DataFrame
+df = pd.DataFrame(data)
+
+# Calculate frequency distribution
+frequency = df.groupby("shoe_size")["quantity"].sum()
+
+# Display frequency distribution table
+print("Frequency Distribution of Shoe Sizes:\n")
+print(frequency)
+
+# Plot bar chart
+plt.bar(frequency.index, frequency.values)
+
+plt.xlabel("Shoe Size")
+plt.ylabel("Number of Shoes Sold")
+plt.title("Frequency Distribution of Shoe Sizes")
+plt.show()
